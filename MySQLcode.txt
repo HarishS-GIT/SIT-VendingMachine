@@ -1,0 +1,33 @@
+CREATE DATABASE vending_db;
+USE vending_db;
+
+-- Items table
+CREATE TABLE items (
+    code VARCHAR(5) PRIMARY KEY,
+    name VARCHAR(50),
+    category VARCHAR(50),
+    price DECIMAL(5,2)
+);
+
+-- Purchase Log table
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_code VARCHAR(5),
+    amount DECIMAL(5,2),
+    gpay_number VARCHAR(10),
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO items VALUES
+('A1', '7Up', 'Juice', 30.00),
+('A2', 'Sting', 'Juice', 25.00),
+('A3', 'Maaza', 'Juice', 28.00),
+('B1', 'Milk Bikis', 'Biscuit', 10.00),
+('B2', 'Good Day', 'Biscuit', 12.00),
+('B3', 'Wonder Cake', 'Biscuit', 15.00),
+('C1', 'Dairy Milk', 'Chocolate', 20.00),
+('C2', '5 Star', 'Chocolate', 18.00),
+('C3', 'Jelly', 'Chocolate', 10.00),
+('D1', 'Kurkure', 'Chips', 15.00),
+('D2', 'Lays', 'Chips', 20.00),
+('D3', 'Nachos', 'Chips', 25.00);
